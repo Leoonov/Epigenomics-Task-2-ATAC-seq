@@ -1,0 +1,20 @@
+setwd("C:/Users/M0sa2/Desktop/Epigenomics")
+
+data_stomach <- read.table("regulatory.elements.genes.distances.stomach.tsv", header = TRUE, sep = "\t")
+colnames(data_stomach) <- c("Gene", "Start", "Distance")
+mean_distance <- mean(data_stomach$Distance)
+median_distance <- median(data_stomach$Distance)
+print(mean_distance)
+print(median_distance)
+result <- data.frame(Mean = mean_distance, Median = median_distance)
+write.table(result, file = "C:/Users/M0sa2/Desktop/Epigenomics/results_distance_stomach.txt", sep = "\t", row.names = FALSE)
+
+
+data_sigmoid <- read.table("regulatory.elements.genes.distances.sigmoid.tsv", header = TRUE, sep = "\t")
+colnames(data_sigmoid) <- c("Gene", "Start", "Distance")
+mean_distance <- mean(data_sigmoid$Distance)
+median_distance <- median(data_sigmoid$Distance)
+print(mean_distance)
+print(median_distance)
+result <- data.frame(Mean = mean_distance, Median = median_distance)
+write.table(result, file = "C:/Users/M0sa2/Desktop/Epigenomics/results_distance_sigmoid.txt", sep = "\t", row.names = FALSE)
